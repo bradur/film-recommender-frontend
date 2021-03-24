@@ -7,8 +7,9 @@ import styled from "styled-components"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { faImdb } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faArrowDown, faArrowUp)
+library.add(faArrowDown, faArrowUp, faImdb)
 
 function App() {
   const [genres, setGenres] = useState([])

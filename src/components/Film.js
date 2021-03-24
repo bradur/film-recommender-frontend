@@ -11,6 +11,7 @@ import {
 
 import styled from "styled-components"
 import defaultFilmPicture from "../images/film.png"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Film(props) {
   return (
@@ -26,7 +27,9 @@ function Film(props) {
           <CardBlock>
             <CardSubtitle>{props.film.releaseDate}</CardSubtitle>
             <CardText>{props.film.rating}</CardText>
-            <CardLink>{props.film.imdbLink}</CardLink>
+            <CardLink className="cardLink" href={props.film.imdbLink}>
+              <FontAwesomeIcon icon={['fab', 'imdb']} />
+            </CardLink>
           </CardBlock>
         </Card>
       </FilmWrap>
@@ -49,6 +52,9 @@ const FilmWrap = styled.div`
   }
   & .cardTitle {
     height:40px;
+  }
+  & .cardLink {
+    font-size:40px;
   }
   `}
 `

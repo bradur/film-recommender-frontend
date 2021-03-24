@@ -8,7 +8,12 @@ const getRecommendations = async (genres) => {
   const response = await get({
     url: `${url}/${serializeGenres(genres)}`
   })
-  return response.data
+  return response.data.map(film => Object.assign(
+    film,
+    {
+      imdbLink: `https://www.imdb.com/title/${film.pageId}`
+    }
+  ))
 }
 
 export default { getRecommendations }

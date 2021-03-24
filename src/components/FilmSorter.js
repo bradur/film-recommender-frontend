@@ -40,7 +40,7 @@ function FilmSorter(props) {
       </Button>
       <Select onChange={(event) => handleOnChange(event)}>
         { Array.isArray(props.sortableProperties) ? props.sortableProperties.map(property => (
-        <Option value={property.value}>{property.name}</Option>
+        <Option key={property.value} value={property.value}>{property.name}</Option>
         )) : ""}
       </Select>
     </FilmSorterWrap>
