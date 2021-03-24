@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const apiURL = 'http://localhost:8080'
+const apiURL = 'https://film-recommender.herokuapp.com/'
 
 const processURL = url => `${apiURL}/${url}`
 const get = async (options) => {
