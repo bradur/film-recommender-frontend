@@ -6,10 +6,10 @@ import FilmList from "./components/FilmList"
 import styled from "styled-components"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { faArrowDown, faArrowUp, faStar } from '@fortawesome/free-solid-svg-icons'
 import { faImdb } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faArrowDown, faArrowUp, faImdb)
+library.add(faArrowDown, faArrowUp, faImdb, faStar)
 
 function App() {
   const [genres, setGenres] = useState([])
@@ -25,6 +25,7 @@ function App() {
 
   return (
     <AppWrapper className="App text-center">
+      <h1>Film recommender</h1>
       <GenrePicker genres={genres} setFilms={setFilms}></GenrePicker>
       <FilmList films={films} setFilms={setFilms}></FilmList>
     </AppWrapper>
@@ -33,7 +34,7 @@ function App() {
 
 const AppWrapper = styled.div`
   max-width:960px;
-  margin:auto;
+  margin:40px auto;
 `
 
 export default App

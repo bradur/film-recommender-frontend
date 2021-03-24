@@ -26,10 +26,19 @@ function Film(props) {
           />
           <CardBlock>
             <CardSubtitle>{props.film.releaseDate}</CardSubtitle>
-            <CardText>{props.film.rating}</CardText>
-            <CardLink className="cardLink" href={props.film.imdbLink}>
-              <FontAwesomeIcon icon={['fab', 'imdb']} />
-            </CardLink>
+            <CardText>
+              <FontAwesomeIcon icon={'star'} /> {props.film.rating}
+            </CardText>
+            <CardBlock className="links">
+              <CardLink className="cardLink" href={props.film.imdbLink}>
+                <FontAwesomeIcon icon={['fab', 'imdb']} />
+              </CardLink>
+              { props.film.netflix ? 
+              <CardLink className="cardLink" href="#">
+                <span className="netflix-icon">N</span>
+              </CardLink>
+              : ''}
+            </CardBlock>
           </CardBlock>
         </Card>
       </FilmWrap>
@@ -50,11 +59,31 @@ const FilmWrap = styled.div`
     border:0;
     box-sizing:border-box;
   }
+  & .links {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
   & .cardTitle {
     height:40px;
   }
   & .cardLink {
     font-size:40px;
+    padding:0;
+    display:flex;
+  }
+  & .netflix-icon {
+    font-size:30px;
+    display:inline-block;
+    background: black;
+    color:red;
+    width:35px;
+    height:35px;
+    border-radius:5px;
+    line-height:35px;
+    padding:0;
+    text-align:center;
+    box-sizing:border-box;
   }
   `}
 `

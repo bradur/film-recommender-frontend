@@ -38,7 +38,7 @@ function FilmSorter(props) {
       <Button onClick={handleOnClick}>
         <FontAwesomeIcon icon={orderAsc ? 'arrow-down' : 'arrow-up'} />
       </Button>
-      <Select onChange={(event) => handleOnChange(event)}>
+      <Select className="orderSelect" onChange={(event) => handleOnChange(event)}>
         { Array.isArray(props.sortableProperties) ? props.sortableProperties.map(property => (
         <Option key={property.value} value={property.value}>{property.name}</Option>
         )) : ""}
@@ -49,6 +49,9 @@ function FilmSorter(props) {
 
 const FilmSorterWrap = styled.div`
   & {
+    margin:20px auto;
+  }
+  & .orderSelect {
     height:40px;
   }
 `
